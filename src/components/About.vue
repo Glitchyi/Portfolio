@@ -10,9 +10,8 @@
             <p>-----------------</p>
             <div class="text-2xl text-gray-500">
                 <p>Contact me at:</p>
-                <a href="mailto://advaith@glitchy.systems" class=" text-2xl">advaith@glitchy.systems</a>
+                <a href="mailto:advaith@glitchy.systems" class=" text-2xl">advaith@glitchy.systems</a>
             </div>
-            
         </div>
 
     </div>
