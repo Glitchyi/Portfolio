@@ -9,8 +9,18 @@
 html,
 body {
   height: 100vh;
-  background-color: black;
+  background: #04001d;
   margin: 0;
+}
+
+#snapping{
+  display: flex;
+  flex-basis: column-nowrap;
+  scroll-snap-type: y proximity;
+  overflow: auto;
+}
+#snapping > div{
+  scroll-snap-align: start;
 }
 
 #wrapper {
