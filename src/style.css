@@ -6,6 +6,12 @@
   font-family: "googleSans";
   src: url(/GoogleSans.ttf);
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 html,
 body {
   height: 100vh;
@@ -17,7 +23,7 @@ body {
   display: flex;
   flex-basis: column-nowrap;
   scroll-snap-type: y proximity;
-  overflow: auto;
+  overflow: hidden;
 }
 #snapping > div{
   scroll-snap-align: start;
