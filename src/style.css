@@ -71,3 +71,6 @@ body {
 a:hover{
   cursor: url(/cursor-hover.png), auto;
 }
+#cptext:hover{
+  cursor: url(/cursor-hover.png), auto;
+}
