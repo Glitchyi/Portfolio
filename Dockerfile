@@ -1,13 +1,22 @@
-FROM node:alpine as builder
-WORKDIR /app
-COPY package*.json ./
-RUN npm install --force
-COPY . .
-RUN npx update-browserslist-db@latest
-RUN npm run build
+FROM node:18
 
-FROM nginx as runner
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=builder /app/dist /usr/share/nginx/html
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install
+
+CMD [ "npm" , "run" , "build"]
+
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+
+FROM nginx:1.21.3-alpine
+
+COPY --from=0 ../usr/src/app/dist/ /usr/share/nginx/html/
+
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+
+CMD [ "nginx" , "-g" , "daemon off;" ]
+
