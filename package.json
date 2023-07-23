@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "buildprod": "vite build && scp -r ./dist/* root@167.172.65.29:/var/www/html/",
+    "buildprod": "vite build && start dist",
     "preview": "vite preview"
   },
   "dependencies": {
