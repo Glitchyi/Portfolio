@@ -63,7 +63,7 @@ export default {
                 window.location.href = "https://glitchy.systems/ghost-astley-tokyo-music-video-smol.mp4";
             }
             var elem = document.getElementById("cptext")
-            navigator.clipboard.writeText("test");
+            navigator.clipboard.writeText(command);
             elem.style.transition = "opacity 2s"
             elem.innerHTML = "Copied to clipboard!"
             setTimeout(() => {
