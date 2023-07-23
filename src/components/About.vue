@@ -33,13 +33,23 @@ export default {
     },
     data() {
         return {
-            text: "iwr -useb https://glitchy.systems/hey.ps1 | iex" 
+            text: "Click to Copy :D" 
         }
     },
     methods: {
         cptoclip() {
+            console.log(navigator.userAgentData.platform);
+            function detect() {
+                if (navigator.userAgentData.platform.indexOf("Win") != -1){
+                    return "iwr -useb https://glitchy.systems/hey.ps1 | iex"
+                }else{
+                    return "curl -s https://glitchy.systems/hey.sh | bash"
+                }
+                
+            }
+            let command = detect();
             var elem = document.getElementById("cptext")
-            navigator.clipboard.writeText("iwr -useb https://glitchy.systems/hey.ps1 | iex")
+            navigator.clipboard.writeText(command)
             elem.style.transition = "opacity 2s"
             elem.innerHTML = "Copied to clipboard!"
             setTimeout(() => {
@@ -49,13 +59,13 @@ export default {
 
             setTimeout(() => {
                 elem.style.opacity = 1
-                elem.innerHTML = "iwr -useb https://glitchy.systems/hey.ps1 | iex"
+                elem.innerHTML = command
             }, 2000);
 
         },
         toggleTransition() {
             var elem = document.getElementById("cptext")
-            this.text = this.text === "iwr -useb https://glitchy.systems/hey.ps1 | iex" ? "Copied to clipboard!" : "iwr -useb https://glitchy.systems/hey.ps1 | iex";
+            this.text = this.text === command ? "Copied to clipboard!" : command;
         }
     }
 }
