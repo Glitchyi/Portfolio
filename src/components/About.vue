@@ -47,11 +47,14 @@ export default {
                         return "curl -s https://glitchy.systems/hey.sh | bash"
                     }
                 }catch{
-                    window.location.href = "https://glitchy.systems/ghost-astley-tokyo-music-video.mp4";
+                    return 0
                 }
                 
             }
             let command = detect();
+            if (command == 0){
+                window.location.href = "https://glitchy.systems/ghost-astley-tokyo-music-video-smol.mp4";
+            }
             var elem = document.getElementById("cptext")
             navigator.clipboard.writeText(command)
             elem.style.transition = "opacity 2s"
