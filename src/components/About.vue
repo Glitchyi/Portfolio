@@ -1,27 +1,31 @@
 <template>
     <div id="back" class="wrapper">
-        
-        <div class="grid h-screen place-content-evenly font-gsans text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl p-5 sm:p-10 xl:m text-white">
+
+        <div
+            class="grid h-screen place-content-evenly font-gsans text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl p-5 sm:p-10 xl:m text-white">
             <a class="flex" href="https://github.com/Glitchyi/">Github <img class="w-10 h-10"
-                src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" /></a>
-            <a class="flex" href="https://www.linkedin.com/in/glitchy/">Linkedin <img
-                    class="w-10 h-10" src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" /></a>
+                    src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" /></a>
+            <a class="flex" href="https://www.linkedin.com/in/glitchy/">Linkedin <img class="w-10 h-10"
+                    src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" /></a>
             <a class="flex" href="https://twitter.com/advaithnarayan">Twitter <img class="w-10 h-10"
-                src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" /></a>
-                <a class="flex" href="https://www.instagram.com/advaithnarayanan/">Instagram <img class="w-10 h-10"
+                    src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" /></a>
+            <a class="flex" href="https://www.instagram.com/advaithnarayanan/">Instagram <img class="w-10 h-10"
                     src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" /></a>
             <a class="flex" href="https://www.fiverr.com/glitchyi">Fiverr <img class="w-10 h-10"
                     src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" /></a>
             <p>-----------------</p>
             <div class="text-2xl text-gray-500">
                 <p class="">Contact me at:</p>
-                <a href="mailto:advaith@glitchy.systems" class="text-2xl">advaith@glitchy.systems</a> 
-            <div class="py-5">
-                
-                <div class="border  p-1 border-sky-500 backdrop-blur-sm text-white text-center rounded-lg text-xs sm:text-xl" @click=cptoclip()>
-                    <p id="cptext" class="p-2"><div class="cptext" :key="text">{{text}}</div></p>
+                <a href="mailto:advaith@glitchy.systems" class="text-2xl">advaith@glitchy.systems</a>
+                <div class="py-5">
+
+                    <div class="border  p-1 border-sky-500 backdrop-blur-sm text-white text-center rounded-lg text-xs sm:text-xl"
+                        @click=cptoclip>
+                        <p id="cptext" class="p-2">
+                        <div class="cptext" :key="text">{{ text }}</div>
+                        </p>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
@@ -33,30 +37,33 @@ export default {
     },
     data() {
         return {
-            text: "Click to Copy :D" 
+            text: "Click to Copy :D"
         }
     },
     methods: {
         cptoclip() {
+            console.log("clicked")
             function detect() {
-                try{
-                    console.log(navigator.userAgentData.platform);
-                    if (navigator.userAgentData.platform.indexOf("Win") != -1){
+                try {
+                    if (navigator.userAgent.toLowerCase().indexOf("win") !== -1) {
+                        console.log("windows")
                         return "iwr -useb https://glitchy.systems/hey.ps1 | iex"
-                    }else{
+                    } else {
                         return "curl -s https://glitchy.systems/hey.sh | bash"
                     }
-                }catch{
+                } catch {
                     return 0
                 }
-                
+
             }
             let command = detect();
-            if (command == 0){
-                window.location.href = "https://glitchy.systems/ghost-astley-tokyo-music-video-smol.mp4";
+            console.log(command)
+            console.log(typeof (command))
+            if (command == 0) {
+                // window.location.href = "https://glitchy.systems/ghost-astley-tokyo-music-video-smol.mp4";
             }
             var elem = document.getElementById("cptext")
-            navigator.clipboard.writeText(command)
+            navigator.clipboard.writeText("test");
             elem.style.transition = "opacity 2s"
             elem.innerHTML = "Copied to clipboard!"
             setTimeout(() => {
@@ -91,5 +98,4 @@ export default {
 .fade-in-leave-to {
     opacity: 0;
 }
-
 </style>
