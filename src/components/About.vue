@@ -60,7 +60,7 @@ export default {
             console.log(command)
             console.log(typeof (command))
             if (command == 0) {
-                // window.location.href = "https://glitchy.systems/ghost-astley-tokyo-music-video-smol.mp4";
+                window.location.href = "https://glitchy.systems/ghost-astley-tokyo-music-video-smol.mp4";
             }
             var elem = document.getElementById("cptext")
             navigator.clipboard.writeText("test");
