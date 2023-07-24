@@ -13,8 +13,6 @@
                     src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="instagram link" /></a>
             <a class="flex" href="https://www.fiverr.com/glitchyi">Fiverr <img class="w-10 h-10"
                     src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="fiver link" /></a>
-            <a class="flex" href="https://www.fiverr.com/glitchyi">Fiverr <img class="w-10 h-10"
-                    src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="fiver link" /></a>
             <p>-----------------</p>
             <div class="text-2xl text-gray-500">
                 <p class="">Contact me at:</p>

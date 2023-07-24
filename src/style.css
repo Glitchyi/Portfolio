@@ -16,16 +16,17 @@ html,
 body {
   height: 100vh;
   background: #04001d;
-  margin: 0;
+  margin: 0;  
+  scroll-behavior: smooth;
   cursor: url(src/assets/cursor/cursor.png), auto;
 }
-#snapping{
+#snapping {
   display: flex;
   flex-basis: column-nowrap;
   scroll-snap-type: y proximity;
   overflow: hidden;
 }
-#snapping > div{
+#snapping > div {
   scroll-snap-align: start;
 }
 
@@ -63,14 +64,13 @@ body {
   }
 }
 
-
 #profile:hover {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.45);
   cursor: url(src/assets/cursor/cursor-hover.png), auto;
 }
-a:hover{
+a:hover {
   cursor: url(src/assets/cursor/cursor-hover.png), auto;
 }
-#cptext:hover{
+#cptext:hover {
   cursor: url(src/assets/cursor/cursor-hover.png), auto;
 }

@@ -12,6 +12,7 @@
   "dependencies": {
     "chart.js": "^4.3.0",
     "dotenv": "^16.3.1",
+    "gsap": "^3.12.2",
     "vue": "^3.2.45",
     "vue-chartjs": "^5.2.0",
     "vue-vanta": "^0.0.1"
