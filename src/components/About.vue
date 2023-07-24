@@ -4,7 +4,7 @@
         <div
             class="grid h-screen place-content-evenly font-gsans text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl p-5 sm:p-10 xl:m text-white">
             <a class="flex" href="https://github.com/Glitchyi/">Github <img class="w-10 h-10"
-                    src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="github link"/></a>
+                    src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="github link" /></a>
             <a class="flex" href="https://www.linkedin.com/in/glitchy/">Linkedin <img class="w-10 h-10"
                     src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="linkdin link" /></a>
             <a class="flex" href="https://twitter.com/advaithnarayan">Twitter <img class="w-10 h-10"
