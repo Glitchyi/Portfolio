@@ -22,7 +22,7 @@ export default {
     loadContent() {
       this.load=!this.load;
       setTimeout(() => {
-        window.scrollTo(0,100);
+        window.scrollTo(0,150);
         console.log("Scrolling");
       }, 500);
     },

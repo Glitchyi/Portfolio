@@ -20,6 +20,9 @@ body {
   scroll-behavior: smooth;
   cursor: url(src/assets/cursor/cursor.png), auto;
 }
+.hover {
+  cursor: url(src/assets/cursor/cursor-hover.png), auto;
+}
 #snapping {
   display: flex;
   flex-basis: column-nowrap;

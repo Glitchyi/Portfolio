@@ -26,10 +26,10 @@
     </div>
     <div
       v-if="showElement"
-      class="text-slate-900 text-l lg:text-2xl font-gsans absolute bottom-2 w-full flex justify-center"
+      class="text-slate-900  text-l lg:text-2xl font-gsans absolute bottom-2 w-full flex justify-center"
     >
       <button @click="toggleShow">
-    <img src="https://www.svgrepo.com/show/80156/down-arrow.svg" width="50" alt="" srcset="">
+    <img class="hover" src="https://www.svgrepo.com/show/80156/down-arrow.svg" width="50" alt="" srcset="">
         </button>
     </div>
   </div>
