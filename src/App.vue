@@ -1,4 +1,4 @@
-<template>
+<template  >
   <HomeVue @button-clicked="loadContent" />
   <ContentVue v-if="load" />
 </template>
@@ -6,6 +6,9 @@
 <script setup>
 import HomeVue from "./components/Landing.vue";
 import ContentVue from "./components/Content.vue";
+import { register } from "swiper/element/bundle";
+register();
+
 </script>
 <script>
 export default {
@@ -22,10 +25,10 @@ export default {
     loadContent() {
       this.load=!this.load;
       setTimeout(() => {
-        window.scrollTo(0,150);
         console.log("Scrolling");
       }, 500);
     },
   },
 };
 </script>
+

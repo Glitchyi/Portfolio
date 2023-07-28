@@ -1,11 +1,18 @@
 <template>
-    <div class="rid h-screen place-content-evenly font-gsans text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl p-5 sm:p-10 xl:m text-white" >
-        Hello There!!
+    <div class="rid  place-content-evenly font-gsans text-white" >
+        <scrolltext/>
+        <images/>
+        <introtext/>
     </div>
 </template>
 <script>
-
+import images from './images.vue';
+import Swiper from './swiper.vue';
+import scrolltext from './scrolltext.vue';
+import introtext from './introtext.vue';
 export default {
     name: 'Info',
+    components: { Swiper, scrolltext ,images, introtext},
 }
 </script>
+
