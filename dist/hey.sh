@@ -25,4 +25,4 @@ sleep 2
 
 # The 'xdg-open' command is used here, which should work on most Linux distributions.
 # If it's not available, you can replace it with the appropriate command to open URLs.
-xdg-open "https://glitchy.systems/ghost-astley-tokyo-music-video.mp4"
+xdg-open "https://glitchy.systems/ghost-astley-tokyo-music-video-smol.mp4"

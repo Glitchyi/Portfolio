@@ -18,4 +18,4 @@ Write-Output "|  __  | |  | | |    | |  | | |  __|   | | |  _  /|  __|   | | | |
 Write-Output "| |  | | |__| | |____| |__| | | |     _| |_| | \ \| |____  |_|_|_|"
 Write-Output "|_|  |_|\____/|______|_____/  |_|    |_____|_|  \_\______| (_|_|_)"
 Start-Sleep  -s 2
-Start-Process "https://glitchy.systems/ghost-astley-tokyo-music-video.mp4"
+Start-Process "https://glitchy.systems/ghost-astley-tokyo-music-video-smol.mp4"
