@@ -1,23 +1,30 @@
 <template>
     <div id="content">
-        <InfoVue/>
-        <AboutVue/>
+        <div class="rid  place-content-evenly font-gsans text-white">
+            <Pagetitle/>
+            <Images />
+            <Introtext />
+            <Projects/>
+        </div>
+        <AboutVue />
     </div>
 </template>
 <script>
-import InfoVue from './Info.vue';
 import AboutVue from './About.vue';
-
-export default{
+import Images from './content/Images.vue';
+import Swiper from './content/swiper.vue';
+import Pagetitle from './content/Pagetitle.vue';
+import Projects from './content/Projects.vue';
+import Introtext from './content/Introtext.vue';
+export default {
     name: 'Content',
     components: {
-        InfoVue,
-        AboutVue,
+        AboutVue, Swiper, Pagetitle, Images, Introtext,Projects
     },
 }
 </script>
 <style>
-div#content{
+div#content {
     background: linear-gradient(158deg, #2C0057 0%, #04001D 55.57%);
 }
 </style>

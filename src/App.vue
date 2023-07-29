@@ -1,20 +1,21 @@
 <template  >
-  <HomeVue @button-clicked="loadContent" />
-  <ContentVue v-if="load" />
+  <Landing @button-clicked="loadContent" />
+  <Content v-if="load" />
 </template>
 
 <script setup>
-import HomeVue from "./components/Landing.vue";
-import ContentVue from "./components/Content.vue";
+import Landing from "./components/Landing.vue";
+import Content from "./components/Content.vue";
 import { register } from "swiper/element/bundle";
+
 register();
 
 </script>
 <script>
 export default {
   components: {
-    HomeVue,
-    ContentVue,
+    Landing,
+    Content,
   },
   data() {
     return {

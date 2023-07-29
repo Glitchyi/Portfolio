@@ -1,22 +1,22 @@
 <template>
-    <div id="galary" class="flex flex-col justfy-evenly w-full">
+    <div class="flex flex-col justfy-start w-full ">
         <section class="flex flex-row justify-evenly">
-            <img src="../assets/images/1row1.webp" alt="">
-            <img src="../assets/images/2row1.webp" alt="">
-            <img src="../assets/images/3row1.webp" alt="">
-            <img src="../assets/images/4row1.webp" alt="">
+            <img src="../../assets/images/1row1.webp" alt="">
+            <img src="../../assets/images/2row1.webp" alt="">
+            <img src="../../assets/images/3row1.webp" alt="">
+            <img src="../../assets/images/4row1.webp" alt="">
         </section>
         <section class="flex flex-row justify-evenly">
-            <img src="../assets/images/1row2.webp" alt="">
-            <img src="../assets/images/2row2.webp" alt="">
-            <img src="../assets/images/3row2.webp" alt="">
-            <img src="../assets/images/4row2.webp" alt="">
+            <img src="../../assets/images/1row2.webp" alt="">
+            <img src="../../assets/images/2row2.webp" alt="">
+            <img src="../../assets/images/3row2.webp" alt="">
+            <img src="../../assets/images/4row2.webp" alt="">
         </section>
         <section class="flex flex-row justify-evenly">
-            <img src="../assets/images/1row3.webp" alt="">
-            <img src="../assets/images/2row3.webp" alt="">
-            <img src="../assets/images/3row3.webp" alt="">
-            <img src="../assets/images/4row3.webp" alt="">
+            <img src="../../assets/images/1row3.webp" alt="">
+            <img src="../../assets/images/2row3.webp" alt="">
+            <img src="../../assets/images/3row3.webp" alt="">
+            <img src="../../assets/images/4row3.webp" alt="">
         </section>
     </div>
 </template>
@@ -42,7 +42,8 @@ export default {
                             trigger: section,
                             start: `top 80%`,
                             end: 'bottom 30%',
-                            scrub: 0.5, toggleActions: "play reset none reset",
+                            scrub: 0.5, 
+                            toggleActions: "play reset none reset",
                         },
                     },
                 )
@@ -56,7 +57,15 @@ export default {
 <style>
 @media screen and (max-width: 768px) {
     section img{
-        width: 10vh;
+        width: 20vh;
+    }
+    section{
+        padding: 0px;
     }
 }
+
+
+    section{
+        padding: 30px;
+    }
 </style>

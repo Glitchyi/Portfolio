@@ -1,6 +1,6 @@
 <template>
     <div ref="box"
-        class="rapper flex justify-center flex-col whitespace-nowrap text-6xl sm:text-7xl lg:text-xxl md:text-9xl landing-none">
+        class="rapper flex justify-center flex-col whitespace-nowrap text-7xl sm:text-7xl lg:text-xxl md:text-9xl landing-none">
         HELLO! HELLO! HELLO! HELLO HELLO
     </div>
     <div ref="box2">
@@ -42,4 +42,12 @@ export default {
 </script>
 
   
-<style></style>
+<style>
+@media (max-width: 768px) {
+  .rapper{
+    position: relative;
+    right: 40%;
+  }
+}
+
+</style>

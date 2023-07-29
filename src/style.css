@@ -12,6 +12,16 @@
   width: 0px;
 }
 
+@media screen and (max-width: 768px) {
+  .pconly {
+    display: none;
+  }
+  .mobileonly {
+    display: block;
+  }
+}
+
+
 html,
 body {
   overflow-x: hidden;
