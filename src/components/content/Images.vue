@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col justfy-start w-full ">
+    <div class="lmao flex flex-col justfy-start w-full ">
         <section class="flex flex-row justify-evenly">
             <img src="../../assets/images/1row1.webp" alt="">
             <img src="../../assets/images/2row1.webp" alt="">
@@ -65,7 +65,7 @@ export default {
 }
 
 
-    section{
+    .lmao section{
         padding: 30px;
     }
 </style>

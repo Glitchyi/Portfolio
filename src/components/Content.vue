@@ -6,6 +6,11 @@
             <Introtext />
             <Projects/>
         </div>
+        <div class="px-20 pt-20 flex text-white justify-center">
+            
+            <p class="text-6xl font-gsans"><hr>Hey, maybe get in touch some time!! (⁠◍⁠•⁠ᴗ⁠•⁠◍⁠)⁠❤<hr></p>
+            
+        </div>
         <AboutVue />
     </div>
 </template>

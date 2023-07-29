@@ -2,6 +2,15 @@
 module.exports = {
   content: ["./src/**/*.html", "./src/**/*.vue"],
   theme: {
+    colors: {
+      white: "#ffffff",
+      rust:'#b7410e', 
+      docker: "#0db7ed",
+      black: "#000000",
+      trasperent: "transparent",
+      hyperlink: "#964CF3",
+      cyan: "#00FFFF",
+    },
     fontFamily: {
       gsans: ["googleSans"],
     },
