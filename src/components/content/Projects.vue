@@ -35,33 +35,33 @@
 
 <script>
 import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger"; 
-export default {
-    mounted() {
-        gsap.registerPlugin(ScrollTrigger); // Register the ScrollTrigger plugin
-        let mm = gsap.matchMedia();
-        mm.add("(min-width: 768px)", () => {
-            gsap.utils.toArray('.projs').forEach((sims, index) => {
-                gsap.fromTo(
-                    '.projs',
-                    { x: '-60%', opacity: 0.05 }, // Move the element from the left and set initial opacity to 0
-                    {
-                        x: `0%`,
-                        opacity: 1,
-                        scrollTrigger: {
-                            trigger: sims,
-                            start: `top 100%`,
-                            end: 'bottom 90%',
-                            scrub: 0.5, 
-                            triggerOnce: true,
-                        },
-                    },
-                )
-            });
-        });
+// import ScrollTrigger from "gsap/ScrollTrigger"; 
+// export default {
+//     mounted() {
+//         gsap.registerPlugin(ScrollTrigger); // Register the ScrollTrigger plugin
+//         let mm = gsap.matchMedia();
+//         mm.add("(min-width: 768px)", () => {
+//             gsap.utils.toArray('.projs').forEach((sims, index) => {
+//                 gsap.fromTo(
+//                     '.projs',
+//                     { x: '-60%', opacity: 0.05 }, // Move the element from the left and set initial opacity to 0
+//                     {
+//                         x: `0%`,
+//                         opacity: 1,
+//                         scrollTrigger: {
+//                             trigger: sims,
+//                             start: `top 100%`,
+//                             end: 'bottom 90%',
+//                             scrub: 0.5, 
+//                             triggerOnce: true,
+//                         },
+//                     },
+//                 )
+//             });
+//         });
 
 
-    },
-};
+//     },
+// };
 </script>
 
