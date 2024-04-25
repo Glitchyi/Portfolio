@@ -1,8 +1,10 @@
 <template>
     <div id="content">
         <div class="rid  place-content-evenly font-gsans text-white">
-            <Pagetitle/>
-            <Images />
+            <div class="hidden md:block" >
+                <Pagetitle/>
+            </div>
+            <Images class="hidden md:block" />
             <Introtext />
         </div>
         <AboutVue />

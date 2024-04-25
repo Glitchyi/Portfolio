@@ -17,9 +17,8 @@
             <div class="text-2xl text-gray-500">
                 <p class="">Contact me at:</p>
                 <a href="mailto:advaith@glitchy.systems" class="text-2xl email_effect">advaith@glitchy.systems</a>
-                <div class="py-5 mb-20">
-
-                    <div class="border hidden md:block  p-1 border-sky-500 backdrop-blur-sm text-white text-center rounded-lg text-xs sm:text-xl"
+                <div class="py-5">
+                    <div class="border hidden md:block p-1 mb-10 border-sky-500 backdrop-blur-sm text-white text-center rounded-lg text-xs sm:text-xl"
                         @click=cptoclip>
                         <p id="cptext" class="p-2">
                         <div class="cptext" :key="text">{{ text }}</div>
