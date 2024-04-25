@@ -53,6 +53,8 @@ export default {
 
     },
 };
+
+
 </script>
 <style>
 @media screen and (max-width: 768px) {

@@ -1,10 +1,10 @@
 <template>
     <div class="p-10 lg:px-20 text-2xl lg:text-4xl lg:mt-20 w-full ">
         <div class="banter flex justify-evenly">
-            <div>
-                Hi there! I'm Advaith Narayanan,<br>
-                Currently {{ age }}, getting older<br>
-                Identify as a <s>webview</s> native Keralite.<br>
+            <div class="md:w-1/3 ">
+                Hi there! I'm Advaith Narayanan,
+                Currently {{ age.years }} years and {{ age.days }} days, getting older
+                Identify as a <s>webview</s> native Keralite.
                 <p class="pconly">Also, I kinda type somtimes → </p>
             </div>
 
@@ -27,7 +27,14 @@
 </template>
 <script setup>
 let d = new Date();
-const age = d.getFullYear() - 2003;
+const now = new Date();
+const past = new Date(2003, 6, 28); // January 1, 2003
+const totalSeconds = Math.floor((now - past) / 1000);
+const years = Math.floor(totalSeconds / (60 * 60 * 24 * 365.25));
+const remainingSeconds = totalSeconds - (years * 60 * 60 * 24 * 365.25);
+const days = Math.floor(remainingSeconds / (60 * 60 * 24));
+
+const age = { years: years, days: days };
 </script>
 <script>
 import Technicaldetails from './Technicaldetails.vue';
@@ -36,20 +43,19 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 
 let wpm = 75;
-fetch('https://api.monkeytype.com/results/last', {
-    method: 'GET',
-    headers: {
-        'Authorization': import.meta.env.VITE_MONKEYTYPE_API_KEY,
-    },
-}).then(res => res.json()).then(data => {
-    wpm = data.data.wpm;
-}).catch(err => {
-    wpm = ':)'
-})
+// fetch('https://api.monkeytype.com/results/last', {
+//     method: 'GET',
+//     headers: {
+//         'Authorization': `ApeKey ${import.meta.env.VITE_MONKEYTYPE_API_KEY}`,
+//     },
+// }).then(res => res.json()).then(data => {
+//     wpm = data.data.wpm;
+// }).catch(err => {
+//     wpm = ':)'
+// })
 export default {
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
-        // gsap.fromTo(".banter", { opacity: 0 },{ opacity: 1, duration: 2, scrollTrigger: { trigger: ".banter", start: "top 80%", end: "bottom 20%", toggleActions: "play none none none" }});
 
     },
     data() {

@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     colors: {
       white: "#ffffff",
+      gray: "#cecece",
       rust:'#b7410e', 
       docker: "#0db7ed",
       black: "#000000",
