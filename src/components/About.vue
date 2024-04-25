@@ -11,9 +11,9 @@
                     src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="twitter link" /></a>
             <a class="flex" href="https://www.instagram.com/advaithnarayanan/"><p class="link_effect">Instagram</p> <img class="md:w-10 md:h-10 w-5 h-5 "
                     src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="instagram link" /></a>
-            <a class="flex" href="https://www.fiverr.com/glitchyi"><p class="link_effect">Fiverr</p> <img class="md:w-10 md:h-10 w-5 h-5 "
-                    src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="fiver link" /></a>
-            <p>-----------------</p>
+            <a class="flex" href="https://medium.com/@advaithnarayanan8"> <p class="link_effect">Medium</p><img class="md:w-10 md:h-10 w-5 h-5 "
+                    src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="medium link" /></a>
+            <div class="w-full h-2 bg-white"></div>
             <div class="text-2xl text-gray-500">
                 <p class="">Contact me at:</p>
                 <a href="mailto:advaith@glitchy.systems" class="text-2xl email_effect">advaith@glitchy.systems</a>
