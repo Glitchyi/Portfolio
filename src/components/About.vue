@@ -2,24 +2,24 @@
     <div id="back" class="wrapper">
 
         <div
-            class="grid h-screen place-content-evenly font-gsans text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl p-5 sm:p-10 xl:m text-white">
-            <a class="flex" href="https://github.com/Glitchyi/"><p class="link_effect">Github</p> <img class="w-10 h-10"
+            class="flex flex-col md:px-20 px-10 gap-5 font-gsans text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl  text-white">
+            <a class="flex" href="https://github.com/Glitchyi/"><p class="link_effect">Github</p> <img class="md:w-10 md:h-10 w-5 h-5 "
                     src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="github link" /></a>
-            <a class="flex" href="https://www.linkedin.com/in/glitchy/"><p class="link_effect">Linkedin</p> <img class="w-10 h-10"
+            <a class="flex" href="https://www.linkedin.com/in/glitchy/"><p class="link_effect">Linkedin</p> <img class="md:w-10 md:h-10 w-5 h-5 "
                     src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="linkdin link" /></a>
-            <a class="flex" href="https://twitter.com/advaithnarayan"><p class="link_effect">Twitter</p> <img class="w-10 h-10"
+            <a class="flex" href="https://twitter.com/advaithnarayan"><p class="link_effect">Twitter</p> <img class="md:w-10 md:h-10 w-5 h-5 "
                     src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="twitter link" /></a>
-            <a class="flex" href="https://www.instagram.com/advaithnarayanan/"><p class="link_effect">Instagram</p> <img class="w-10 h-10"
+            <a class="flex" href="https://www.instagram.com/advaithnarayanan/"><p class="link_effect">Instagram</p> <img class="md:w-10 md:h-10 w-5 h-5 "
                     src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="instagram link" /></a>
-            <a class="flex" href="https://www.fiverr.com/glitchyi"><p class="link_effect">Fiverr</p> <img class="w-10 h-10"
+            <a class="flex" href="https://www.fiverr.com/glitchyi"><p class="link_effect">Fiverr</p> <img class="md:w-10 md:h-10 w-5 h-5 "
                     src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="fiver link" /></a>
             <p>-----------------</p>
             <div class="text-2xl text-gray-500">
                 <p class="">Contact me at:</p>
                 <a href="mailto:advaith@glitchy.systems" class="text-2xl email_effect">advaith@glitchy.systems</a>
-                <div class="py-5">
+                <div class="py-5 mb-20">
 
-                    <div class="border  p-1 border-sky-500 backdrop-blur-sm text-white text-center rounded-lg text-xs sm:text-xl"
+                    <div class="border hidden md:block  p-1 border-sky-500 backdrop-blur-sm text-white text-center rounded-lg text-xs sm:text-xl"
                         @click=cptoclip>
                         <p id="cptext" class="p-2">
                         <div class="cptext" :key="text">{{ text }}</div>

@@ -1,5 +1,5 @@
 <template>
-    <div class="lmao flex flex-col justfy-start w-full ">
+    <div class="lmao flex flex-col overflow-clip">
         <section class="flex flex-row justify-evenly">
             <img src="../../assets/images/1row1.webp" alt="">
             <img src="../../assets/images/2row1.webp" alt="">
@@ -33,15 +33,15 @@ export default {
                 console.log(section, index);
                 gsap.fromTo(
                     section,
-                    { x: index == 1 ? '90%' : '-80%', opacity: 0.05 }, // Move the element from the left and set initial opacity to 0
+                    { x: index == 1 ? '90%' : '-80%', opacity: 0.05 },
                     {
                         x: `${index == 1 ? '5%' : '-5%'}`,
                         opacity: 1,
                         duration: 1,
                         scrollTrigger: {
                             trigger: section,
-                            start: `top 80%`,
-                            end: 'bottom 30%',
+                            start: `top 90%`,
+                            end: 'bottom 70%',
                             scrub: 0.5, 
                             toggleActions: "play reset none reset",
                         },
@@ -57,17 +57,32 @@ export default {
 
 </script>
 <style>
+.lmao section{
+    padding: 30px;
+}
 @media screen and (max-width: 768px) {
+    .lmao{
+        border:  2.5rem solid transparent;
+    }
     section img{
         width: 20vh;
     }
     section{
         padding: 0px;
     }
+    .lmao section:nth-child(1){
+        padding: 0px;
+        transform: translate(-60px);
+    }
+    .lmao section:nth-child(2){
+        padding: 0px;
+        transform: translate(-120px);
+    }
+    .lmao section:nth-child(3){
+        padding: 0px;
+        transform: translate(-180px);
+    }
 }
 
 
-    .lmao section{
-        padding: 30px;
-    }
 </style>

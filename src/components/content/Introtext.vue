@@ -1,7 +1,7 @@
 <template>
     <div class="p-10 lg:px-20 text-2xl lg:text-4xl lg:mt-20 w-full ">
         <div class="banter flex justify-evenly">
-            <div class="md:w-1/3 ">
+            <div class="md:w-1/2 ">
                 Hi there! I'm Advaith Narayanan,
                 Currently {{ age.years }} years and {{ age.days }} days, getting older
                 Identify as a <s>webview</s> native Keralite.
@@ -16,7 +16,6 @@
             </div>
 
         </div>
-        <br>
         <br>
         <hr>
         <br>
@@ -42,17 +41,16 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 
-let wpm = 75;
-// fetch('https://api.monkeytype.com/results/last', {
-//     method: 'GET',
-//     headers: {
-//         'Authorization': `ApeKey ${import.meta.env.VITE_MONKEYTYPE_API_KEY}`,
-//     },
-// }).then(res => res.json()).then(data => {
-//     wpm = data.data.wpm;
-// }).catch(err => {
-//     wpm = ':)'
-// })
+let wpm = ':)⠀';
+fetch('https://api.monkeytype.com/results/last', {
+    method: 'GET',
+    headers: {
+        'Authorization': `ApeKey ${import.meta.env.VITE_MONKEYTYPE_API_KEY}`,
+    },
+}).then(res => res.json()).then(data => {
+    wpm = data.data.wpm;
+}).catch(err => {
+})
 export default {
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
