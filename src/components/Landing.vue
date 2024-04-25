@@ -17,13 +17,7 @@
         </div>
       </div>
     </div>
-    <div v-if="showElement"
-      class="text-slate-900  text-l lg:text-2xl font-gsans absolute bottom-2 w-full flex justify-center">
-      <button @click="toggleShow">
-        <img id="down-arrow" class="hover" src="https://www.svgrepo.com/show/80156/down-arrow.svg" width="50" alt=""
-          srcset="">
-      </button>
-    </div>
+  
   </div>
 </template>
 <script>
@@ -32,14 +26,6 @@ export default {
     return {
       showElement: true,
     };
-  },
-  methods: {
-    toggleShow() {
-      document.getElementById("down-arrow").style.opacity = "0";
-      this.showElement = false;
-      console.log("Button Clicked");
-      this.$emit("button-clicked");
-    },
   },
 };
 </script>

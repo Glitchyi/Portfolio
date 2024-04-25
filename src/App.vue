@@ -1,6 +1,6 @@
 <template  >
-  <Landing @button-clicked="loadContent" />
-  <Content v-if="load" />
+  <Landing/>
+  <Content/>
 </template>
 
 <script setup>
