@@ -60,6 +60,10 @@ export default {
 .lmao section{
     padding: 30px;
 }
+section img{
+  width: 40vh;
+}
+
 @media screen and (max-width: 768px) {
     .lmao{
         border:  2.5rem solid transparent;

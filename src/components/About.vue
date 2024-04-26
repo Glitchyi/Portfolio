@@ -2,23 +2,35 @@
     <div id="back" class="wrapper">
 
         <div
-            class="flex flex-col md:px-20 px-10 gap-5 font-gsans text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl  text-white">
-            <a class="flex" href="https://github.com/Glitchyi/"><p class="link_effect">Github</p> <img class="md:w-10 md:h-10 w-5 h-5 "
-                    src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="github link" /></a>
-            <a class="flex" href="https://www.linkedin.com/in/glitchy/"><p class="link_effect">Linkedin</p> <img class="md:w-10 md:h-10 w-5 h-5 "
-                    src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="linkdin link" /></a>
-            <a class="flex" href="https://twitter.com/advaithnarayan"><p class="link_effect">Twitter</p> <img class="md:w-10 md:h-10 w-5 h-5 "
-                    src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="twitter link" /></a>
-            <a class="flex" href="https://www.instagram.com/advaithnarayanan/"><p class="link_effect">Instagram</p> <img class="md:w-10 md:h-10 w-5 h-5 "
-                    src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="instagram link" /></a>
-            <a class="flex" href="https://medium.com/@advaithnarayanan8"> <p class="link_effect">Medium</p><img class="md:w-10 md:h-10 w-5 h-5 "
-                    src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="medium link" /></a>
+            class="flex flex-col md:flex-row px-10 md:px-20 gap-5 font-gsans text-xl py-10 md:text-2xl text-white">
+            <div class="flex flex-col md:flex-row gap-5 [&>*]:items-center pb-5 md:pb-0">
+                <a class="flex" href="https://github.com/Glitchyi/">
+                    <p class="link_effect">Github</p> <img class="md:w-8 md:h-8 w-5 h-5 "
+                        src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="github link" />
+                </a>
+                <a class="flex" href="https://www.linkedin.com/in/glitchy/">
+                    <p class="link_effect">Linkedin</p> <img class="md:w-8 md:h-8 w-5 h-5 "
+                        src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="linkdin link" />
+                </a>
+                <a class="flex" href="https://twitter.com/advaithnarayan">
+                    <p class="link_effect">Twitter</p> <img class="md:w-8 md:h-8 w-5 h-5 "
+                        src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="twitter link" />
+                </a>
+                <a class="flex" href="https://www.instagram.com/advaithnarayanan/">
+                    <p class="link_effect">Instagram</p> <img class="md:w-8 md:h-8 w-5 h-5 "
+                        src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="instagram link" />
+                </a>
+                <a class="flex" href="https://medium.com/@advaithnarayanan8">
+                    <p class="link_effect">Medium</p><img class="md:w-8 md:h-8 w-5 h-5 "
+                        src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="medium link" />
+                </a>
+            </div>
             <hr>
-            <div class="text-2xl text-gray-500">
-                <p class="">Contact me at:</p>
+            <div class="flex flex-col md:flex-row text-2xl gap-5 md:items-center items-start text-gray-500">
+                <p>Contact me at: </p>
                 <a href="mailto:advaith@glitchy.systems" class="text-2xl email_effect">advaith@glitchy.systems</a>
-                <div class="py-5">
-                    <div class="border hidden md:block p-1 mb-10 border-sky-500 backdrop-blur-sm text-white text-center rounded-lg text-xs sm:text-xl"
+                <div>
+                    <div class="border hidden md:block p-1 border-sky-500 backdrop-blur-sm text-white text-center rounded-lg text-xs sm:text-sm"
                         @click=cptoclip>
                         <p id="cptext" class="p-2">
                         <div class="cptext" :key="text">{{ text }}</div>
@@ -85,53 +97,52 @@ export default {
 </script>
 
 <style>
-
 .link_effect {
-  display: inline-block;
-  position: relative;
-  color: #b4e6ff;
+    display: inline-block;
+    position: relative;
+    color: #b4e6ff;
 }
 
 .link_effect:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #b4e6ff;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #b4e6ff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
 }
 
 .link_effect:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .email_effect {
-  display: inline-block;
-  position: relative;
-  color: #6b7280;
+    display: inline-block;
+    position: relative;
+    color: #6b7280;
 }
 
 .email_effect:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #6b7280;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #6b7280;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
 }
 
 .email_effect:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 
@@ -146,5 +157,4 @@ export default {
 .fade-in-enter,
 .fade-in-leave-to {
     opacity: 0;
-}
-</style>
+}</style>
