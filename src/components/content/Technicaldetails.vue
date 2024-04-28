@@ -23,7 +23,7 @@
                     <div class="pl-2 md:pl-5 bg-white whitespace-nowrap text-black">Debian, Windows 11</div>
                 </div>
                 <div class="w-screen h-50">
-                    <div class="pl-2 md:pl-5 textswish whitespace-nowrap absolute w-screen hover:opacity-0">Mudic</div>
+                    <div class="pl-2 md:pl-5 textswish whitespace-nowrap absolute w-screen hover:opacity-0">Music</div>
                     <div class="pl-2 md:pl-5 bg-white whitespace-nowrap text-black">Apple Music, FLAC dwnlds</div>
                 </div>
                 <div class="w-screen h-50">

@@ -1,5 +1,5 @@
 <template>
-    <div class="p-10 lg:px-20 text-2xl lg:text-4xl lg:mt-20 w-full ">
+    <div class="px-10 pt-10 lg:px-20 text-2xl lg:text-4xl lg:mt-20 w-full ">
         <div class="banter flex justify-evenly">
             <div class="md:w-1/2 ">
                 Hi there! I'm Advaith Narayanan,
