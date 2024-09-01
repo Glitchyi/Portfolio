@@ -30,8 +30,7 @@
                 <p>Contact me at: </p>
                 <a href="mailto:advaith@glitchy.systems" class="text-2xl email_effect">advaith@glitchy.systems</a>
                 <div>
-                    <div class="border hidden md:block p-1 border-sky-500 backdrop-blur-sm text-white text-center rounded-lg text-xs sm:text-sm"
-                        @click=cptoclip>
+                    <div class="border hidden md:block p-1 border-sky-500 backdrop-blur-sm text-white text-center rounded-lg text-xs sm:text-sm" @click=cptoclip>
                         <p id="cptext" class="p-2">
                         <div class="cptext" :key="text">{{ text }}</div>
                         </p>
@@ -157,4 +156,4 @@ export default {
 .fade-in-enter,
 .fade-in-leave-to {
     opacity: 0;
-}</style>
+}
