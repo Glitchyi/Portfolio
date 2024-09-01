@@ -1,5 +1,11 @@
 @echo off
 cls
-echo [101mTHIS IS THE EXPANSION BRANCH[0m
-echo [102mUse git checkout main to switch[0m
+
+echo [101m                                                           [0m
+echo [101m                          Warning                          [0m
+echo [101m                                                           [0m
+echo [102m                                                           [0m
+echo [102m                    NOT THE MAIN BRANCH                    [0m
+echo [102m                                                           [0m
+
 timeout /t 10

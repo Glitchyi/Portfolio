@@ -1,12 +1,35 @@
-<script setup>
-import HomeVue from './components/Home.vue';
-import AboutVue from './components/About.vue';
-</script>
-
-<template>
-  <div class="snapping">
-    <div><HomeVue/></div>
-    <div><AboutVue/></div>
-  </div>
+<template  >
+  <Landing/>
+  <Content/>
 </template>
+
+<script setup>
+import Landing from "./components/Landing.vue";
+import Content from "./components/Content.vue";
+import { register } from "swiper/element/bundle";
+
+register();
+
+</script>
+<script>
+export default {
+  components: {
+    Landing,
+    Content,
+  },
+  data() {
+    return {
+      load: false,
+    };
+  },
+  methods: {
+    loadContent() {
+      this.load=!this.load;
+      setTimeout(() => {
+        console.log("Scrolling");
+      }, 500);
+    },
+  },
+};
+</script>
 
