@@ -12,20 +12,35 @@
   width: 0px;
 }
 
+@media screen and (max-width: 768px) {
+  .pconly {
+    display: none;
+  }
+  .mobileonly {
+    display: block;
+  }
+}
+
+
 html,
 body {
+  overflow-x: hidden;
   height: 100vh;
   background: #04001d;
-  margin: 0;
-  cursor: url(/cursor.png), auto;
+  margin: 0;  
+  scroll-behavior: smooth;
+  cursor: url(src/assets/cursor/cursor.png), auto;
 }
-#snapping{
+.hover {
+  cursor: url(src/assets/cursor/cursor-hover.png), auto;
+}
+#snapping {
   display: flex;
   flex-basis: column-nowrap;
   scroll-snap-type: y proximity;
   overflow: hidden;
 }
-#snapping > div{
+#snapping > div {
   scroll-snap-align: start;
 }
 
@@ -39,7 +54,7 @@ body {
 }
 #name:hover {
   text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.45);
-  cursor: url(/cursor-hover.png), auto;
+  cursor: url(src/assets/cursor/cursor-hover.png), auto;
 }
 #tagline {
   color: #4dfdef;
@@ -47,7 +62,7 @@ body {
   text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
 }
 #tagline:hover {
-  cursor: url(/cursor-hover.png), auto;
+  cursor: url(src/assets/cursor/cursor-hover.png), auto;
   text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.45);
 }
 #profile {
@@ -63,14 +78,13 @@ body {
   }
 }
 
-
 #profile:hover {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.45);
-  cursor: url(/cursor-hover.png), auto;
+  cursor: url(src/assets/cursor/cursor-hover.png), auto;
 }
-a:hover{
-  cursor: url(/cursor-hover.png), auto;
+a:hover {
+  cursor: url(src/assets/cursor/cursor-hover.png), auto;
 }
-#cptext:hover{
-  cursor: url(/cursor-hover.png), auto;
+#cptext:hover {
+  cursor: url(src/assets/cursor/cursor-hover.png), auto;
 }
