@@ -7,18 +7,16 @@
             <Images class="hidden md:block" />
             <Introtext />
         </div>
-        <AboutVue />
     </div>
 </template>
 <script>
-import AboutVue from './About.vue';
 import Images from './content/Images.vue';
 import Pagetitle from './content/Pagetitle.vue';
 import Introtext from './content/Introtext.vue';
 export default {
     name: 'Content',
     components: {
-        AboutVue, Pagetitle, Images, Introtext
+        Pagetitle, Images, Introtext
     },
 }
 </script>

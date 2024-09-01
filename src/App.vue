@@ -1,10 +1,13 @@
 <template  >
   <Landing/>
-  <Content/>
+  <Content class="hidden md:block"/>
+  <AboutVue />
 </template>
 
 <script setup>
 import Landing from "./components/Landing.vue";
+
+import AboutVue from './components/About.vue';
 import Content from "./components/Content.vue";
 import { register } from "swiper/element/bundle";
 
