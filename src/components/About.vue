@@ -11,7 +11,7 @@
                     src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="twitter link" /></a>
             <a class="flex" href="https://www.instagram.com/advaithnarayanan/">Instagram <img class="w-10 h-10"
                     src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="instagram link" /></a>
-            <a class="flex" href="https://medium.com/@advaithnarayanan8">Medium<img class="w-10 h-10"
+            <a class="flex" href="https://medium.com/@advaithnarayanan8">Medium <img class="w-10 h-10"
                     src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="fiver link" /></a>
             <div class="w-full h-2 bg-white"></div>
             <div class="text-2xl text-gray-500">
