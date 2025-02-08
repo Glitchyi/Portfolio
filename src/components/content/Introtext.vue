@@ -41,16 +41,22 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 
-let wpm = ':)⠀';
-fetch('https://api.monkeytype.com/results/last', {
+fetch('https://your-worker.workers.dev', {
     method: 'GET',
-    headers: {
-        'Authorization': `ApeKey ${import.meta.env.VITE_MONKEYTYPE_API_KEY}`,
-    },
 }).then(res => res.json()).then(data => {
     wpm = data.data.wpm;
 }).catch(err => {
+    let wpm = ':)';
 })
+// fetch('https://api.monkeytype.com/results/last', {
+//     method: 'GET',
+//     headers: {
+//         'Authorization': `ApeKey ${import.meta.env.VITE_MONKEYTYPE_API_KEY}`,
+//     },
+// }).then(res => res.json()).then(data => {
+//     wpm = data.data.wpm;
+// }).catch(err => {
+// })
 export default {
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
