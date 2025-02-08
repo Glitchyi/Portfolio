@@ -1,0 +1,14 @@
+name = "monkeytype-cache"
+main = "monkeytype-worker.js"
+compatibility_date = "2024-01-01"
+
+# Run every 6 hours
+[triggers]
+crons = ["0 */6 * * *"]
+
+[vars]
+MONKEYTYPE_API_KEY = "your-api-key"
+
+[[kv_namespaces]]
+binding = "MONKEY_KV"
+id = "c88ee4e96641412fa3699d23831469fd"
