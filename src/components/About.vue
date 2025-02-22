@@ -20,8 +20,8 @@
                     <p class="link_effect">Instagram</p> <img class="md:w-8 md:h-8 w-5 h-5 "
                         src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="instagram link" />
                 </a>
-                <a class="flex" href="https://medium.com/@advaithnarayanan8">
-                    <p class="link_effect">Medium</p><img class="md:w-8 md:h-8 w-5 h-5 "
+                <a class="flex" href="https://t.me/Glitchyie">
+                    <p class="link_effect">Telegram</p><img class="md:w-8 md:h-8 w-5 h-5 "
                         src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" alt="medium link" />
                 </a>
             </div>
