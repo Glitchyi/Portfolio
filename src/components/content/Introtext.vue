@@ -37,28 +37,22 @@ const age = { years: years, days: days };
 </script>
 <script>
 import Technicaldetails from './Technicaldetails.vue';
+import { ref } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-let wpm = ':) ';
 
-fetch('https://monkeytype-cache.advaithnarayanan8.workers.dev', {
-    method: 'GET',
+let wpm = ref(':) ');
+
+fetch('https://wpm.glitchy.systems/', {
+    method: 'GET'
 }).then(res => res.json()).then(data => {
-    wpm = data.data.wpm;
+    console.log(data);
+    wpm.value = data.wpm.toString();
 }).catch(err => {
-    let wpm = ':)';
+    let wpm = ':) ';
 })
 
-// fetch('https://api.monkeytype.com/results/last', {
-//     method: 'GET',
-//     headers: {
-//         'Authorization': `ApeKey ${import.meta.env.VITE_MONKEYTYPE_API_KEY}`,
-//     },
-// }).then(res => res.json()).then(data => {
-//     wpm = data.data.wpm;
-// }).catch(err => {
-// })
 export default {
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
