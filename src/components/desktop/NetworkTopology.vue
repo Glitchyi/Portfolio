@@ -1,5 +1,5 @@
 <template>
-  <div class="network-section hidden md:block w-full py-20 px-6 lg:px-16 bg-gradient-to-b from-[#04001D] to-[#2C0057]">
+  <section class="network-section hidden md:block w-full py-20 px-6 lg:px-16 bg-gradient-to-b from-[#04001D] to-[#2C0057]" aria-label="Infrastructure network visualization">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-4xl lg:text-6xl font-bold mb-4 font-gsans text-white">Infrastructure Network</h2>
       <p class="text-gray-400 mb-12 text-lg">Interactive visualization of my homelab and infrastructure setup</p>
@@ -7,11 +7,16 @@
         ref="networkContainer" 
         class="network-container bg-[#0a0a0a] rounded-lg border border-gray-700 shadow-2xl overflow-hidden"
         style="height: 700px; position: relative;"
+        role="img"
+        :aria-label="selectedNode ? `Network topology showing ${selectedNode.name}` : 'Interactive network topology visualization'"
+        tabindex="0"
       >
-        <svg ref="svgRef" class="w-full h-full"></svg>
+        <svg ref="svgRef" class="w-full h-full" aria-hidden="true"></svg>
         <div 
           v-if="selectedNode"
           class="absolute top-4 right-4 bg-[#161b22] border border-gray-700 rounded-lg p-4 max-w-sm text-white text-sm shadow-xl z-50"
+          role="dialog"
+          aria-label="Node information"
         >
           <h3 class="font-bold text-lg mb-2">{{ selectedNode.name }}</h3>
           <p class="text-gray-300 mb-2">{{ selectedNode.description }}</p>
@@ -21,12 +26,13 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import * as d3 from 'd3'
+import { useDebounce } from '../../composables/useDebounce'
 
 const networkContainer = ref(null)
 const svgRef = ref(null)
@@ -417,14 +423,23 @@ const getNodeSize = (node) => {
 }
 
 const initNetwork = () => {
-  if (!svgRef.value || !networkContainer.value) return
+  try {
+    if (!svgRef.value || !networkContainer.value) {
+      console.warn('Network topology: SVG or container not available')
+      return
+    }
 
-  const width = networkContainer.value.clientWidth
-  const height = 700
+    const width = networkContainer.value.clientWidth
+    const height = 700
 
-  svg = d3.select(svgRef.value)
-    .attr('width', width)
-    .attr('height', height)
+    if (width <= 0 || height <= 0) {
+      console.warn('Network topology: Invalid dimensions')
+      return
+    }
+
+    svg = d3.select(svgRef.value)
+      .attr('width', width)
+      .attr('height', height)
 
   svg.selectAll('*').remove()
 
@@ -573,6 +588,9 @@ const initNetwork = () => {
 
   // Subtle pulsing animation for links (Obsidian-style)
   animateLinks(link)
+  } catch (error) {
+    console.error('Error initializing network topology:', error)
+  }
 }
 
 const highlightConnections = (nodeId) => {
@@ -655,26 +673,40 @@ const dragended = (event) => {
 }
 
 const handleResize = () => {
-  if (networkContainer.value && svgRef.value) {
-    const width = networkContainer.value.clientWidth
-    svg.attr('width', width)
-    simulation.force('center', d3.forceCenter(width / 2, 350))
-    simulation.alpha(1).restart()
+  if (networkContainer.value && svgRef.value && simulation) {
+    try {
+      const width = networkContainer.value.clientWidth
+      svg.attr('width', width)
+      simulation.force('center', d3.forceCenter(width / 2, 350))
+      simulation.alpha(1).restart()
+    } catch (error) {
+      console.warn('Error resizing network visualization:', error)
+    }
   }
 }
 
+// Debounce resize handler for better performance
+const debouncedResize = useDebounce(handleResize, 250)
+
 onMounted(() => {
-  setTimeout(() => {
-    initNetwork()
-  }, 100)
-  window.addEventListener('resize', handleResize)
+  try {
+    // Use requestAnimationFrame for better performance
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        initNetwork()
+      }, 100)
+    })
+    window.addEventListener('resize', debouncedResize, { passive: true })
+  } catch (error) {
+    console.error('Error initializing network visualization:', error)
+  }
 })
 
 onUnmounted(() => {
   if (simulation) {
     simulation.stop()
   }
-  window.removeEventListener('resize', handleResize)
+  window.removeEventListener('resize', debouncedResize)
 })
 </script>
 

@@ -4,7 +4,16 @@
     <div class="grid h-screen place-content-around relative z-10">
       <div class="flex flex-col items-center lg:items-start justify-center lg:justify-start lg:mt-5 xl:justify-evenly lg:flex-row lg:items-center">
         <div class="cur mx-10 flex flex-col justify-center items-center lg:items-start">
-          <img class="profile-image cur rounded-full w-3/4 max-w-sm lg:max-w-lg xl:max-w-xl aspect-square object-cover" src="../assets/profile.gif" alt="Profile Pic" />
+          <img 
+            class="profile-image cur rounded-full w-3/4 max-w-sm lg:max-w-lg xl:max-w-xl aspect-square object-cover" 
+            src="../assets/profile.gif" 
+            alt="Advaith Narayanan - Profile Picture" 
+            loading="eager"
+            decoding="async"
+            width="400"
+            height="400"
+            fetchpriority="high"
+          />
         </div>
         <div class="cur mx-10 flex flex-col justify-center items-center lg:items-start text-white font-gsans">
           <p class="my-5 font-bold leading-none text-4xl lg:text-8xl lg:mt-0 name-text text-center lg:text-left">

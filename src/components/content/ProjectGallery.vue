@@ -1,22 +1,106 @@
 <template>
-    <div class="images-container flex flex-col overflow-clip">
-        <section ref="section1" class="flex flex-row justify-evenly">
-            <img src="../../assets/images/1row1.webp" alt="">
-            <img src="../../assets/images/2row1.webp" alt="">
-            <img src="../../assets/images/3row1.webp" alt="">
-            <img src="../../assets/images/4row1.webp" alt="">
+    <div class="images-container flex flex-col overflow-clip" role="region" aria-label="Project gallery">
+        <section ref="section1" class="flex flex-row justify-evenly" aria-label="Project gallery row 1">
+            <img 
+                src="../../assets/images/1row1.webp" 
+                alt="Project showcase image 1" 
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="300"
+            >
+            <img 
+                src="../../assets/images/2row1.webp" 
+                alt="Project showcase image 2" 
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="300"
+            >
+            <img 
+                src="../../assets/images/3row1.webp" 
+                alt="Project showcase image 3" 
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="300"
+            >
+            <img 
+                src="../../assets/images/4row1.webp" 
+                alt="Project showcase image 4" 
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="300"
+            >
         </section>
-        <section ref="section2" class="flex flex-row justify-evenly">
-            <img src="../../assets/images/1row2.webp" alt="">
-            <img src="../../assets/images/2row2.webp" alt="">
-            <img src="../../assets/images/3row2.webp" alt="">
-            <img src="../../assets/images/4row2.webp" alt="">
+        <section ref="section2" class="flex flex-row justify-evenly" aria-label="Project gallery row 2">
+            <img 
+                src="../../assets/images/1row2.webp" 
+                alt="Project showcase image 5" 
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="300"
+            >
+            <img 
+                src="../../assets/images/2row2.webp" 
+                alt="Project showcase image 6" 
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="300"
+            >
+            <img 
+                src="../../assets/images/3row2.webp" 
+                alt="Project showcase image 7" 
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="300"
+            >
+            <img 
+                src="../../assets/images/4row2.webp" 
+                alt="Project showcase image 8" 
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="300"
+            >
         </section>
-        <section ref="section3" class="flex flex-row justify-evenly">
-            <img src="../../assets/images/1row3.webp" alt="">
-            <img src="../../assets/images/2row3.webp" alt="">
-            <img src="../../assets/images/3row3.webp" alt="">
-            <img src="../../assets/images/4row3.webp" alt="">
+        <section ref="section3" class="flex flex-row justify-evenly" aria-label="Project gallery row 3">
+            <img 
+                src="../../assets/images/1row3.webp" 
+                alt="Project showcase image 9" 
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="300"
+            >
+            <img 
+                src="../../assets/images/2row3.webp" 
+                alt="Project showcase image 10" 
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="300"
+            >
+            <img 
+                src="../../assets/images/3row3.webp" 
+                alt="Project showcase image 11" 
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="300"
+            >
+            <img 
+                src="../../assets/images/4row3.webp" 
+                alt="Project showcase image 12" 
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="300"
+            >
         </section>
     </div>
 </template>

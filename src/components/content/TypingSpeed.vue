@@ -1,41 +1,75 @@
 <template>
-    <div class="typing-speed-section hidden md:block w-full py-16 px-6 lg:px-16">
+    <section class="typing-speed-section hidden md:block w-full py-16 px-6 lg:px-16" aria-label="Typing speed statistics">
         <div class="max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
                 <div class="flex items-center gap-3 md:gap-4">
                     <span class="text-2xl lg:text-3xl font-gsans text-white">Also, I kinda type sometimes</span>
-                    <span class="arrow-pointer text-3xl lg:text-5xl text-white">→</span>
+                    <span class="arrow-pointer text-3xl lg:text-5xl text-white" aria-hidden="true">→</span>
                 </div>
                 
                 <div class="flex flex-col items-center md:items-end">
                     <div class="text-xl lg:text-2xl mb-2 text-gray-400 font-gsans">Latest Monkey Type</div>
                     <div class="text-xl lg:text-2xl mb-4 text-gray-400 font-gsans">Speed</div>
                     <div class="flex items-baseline gap-2">
-                        <p class="text-5xl lg:text-9xl font-bold text-white font-gsans">{{ wpm }}</p>
+                        <p class="text-5xl lg:text-9xl font-bold text-white font-gsans" aria-live="polite">{{ wpm }}</p>
                         <span class="text-2xl lg:text-4xl text-gray-400 font-gsans">wpm</span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const wpm = ref(':) ')
+let abortController = null
+
+const fetchTypingSpeed = async () => {
+    // Cancel previous request if still pending
+    if (abortController) {
+        abortController.abort()
+    }
+    
+    abortController = new AbortController()
+    
+    try {
+        const response = await fetch('https://wpm.glitchy.systems/', {
+            method: 'GET',
+            signal: abortController.signal,
+            // Add timeout
+            headers: {
+                'Accept': 'application/json',
+            }
+        })
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`)
+        }
+        
+        const data = await response.json()
+        if (data && typeof data.wpm !== 'undefined') {
+            wpm.value = data.wpm.toString()
+        }
+    } catch (error) {
+        // Silently handle errors (network issues, aborted requests, etc.)
+        if (error.name !== 'AbortError') {
+            console.warn('Failed to fetch typing speed:', error)
+        }
+        wpm.value = ':) '
+    }
+}
 
 onMounted(() => {
-    fetch('https://wpm.glitchy.systems/', {
-        method: 'GET'
-    })
-        .then(res => res.json())
-        .then(data => {
-            wpm.value = data.wpm.toString()
-        })
-        .catch(() => {
-            wpm.value = ':) '
-        })
+    fetchTypingSpeed()
+})
+
+onUnmounted(() => {
+    // Cleanup: abort any pending requests
+    if (abortController) {
+        abortController.abort()
+    }
 })
 </script>
 

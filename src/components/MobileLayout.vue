@@ -11,7 +11,12 @@
               id="profile"
               class="profile-image cur rounded-full w-3/4" 
               src="../assets/profile.gif" 
-              alt="Profile Pic" 
+              alt="Advaith Narayanan - Profile Picture" 
+              loading="eager"
+              decoding="async"
+              width="200"
+              height="200"
+              fetchpriority="high"
             />
           </div>
           
@@ -47,7 +52,11 @@
             <img 
               class="w-4 h-4" 
               src="https://img.icons8.com/windows/96/FFFFFF/external-link-squared.png" 
-              :alt="`${link.name} link`" 
+              :alt="`${link.name} link`"
+              loading="lazy"
+              decoding="async"
+              width="16"
+              height="16"
             />
           </a>
         </div>

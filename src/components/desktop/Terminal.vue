@@ -1,20 +1,24 @@
 <template>
-  <div class="terminal-section hidden md:block w-full py-20 px-6 lg:px-16">
+  <section class="terminal-section hidden md:block w-full py-20 px-6 lg:px-16" aria-label="Interactive terminal">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-4xl lg:text-6xl font-bold mb-8 font-gsans text-white">Explore via Terminal</h2>
-      <div class="terminal-container bg-[#0d1117] rounded-lg border border-gray-700 shadow-2xl overflow-hidden">
-        <div class="terminal-header bg-[#161b22] px-4 py-2 flex items-center gap-2">
-          <div class="flex gap-2">
+      <div class="terminal-container bg-[#0d1117] rounded-lg border border-gray-700 shadow-2xl overflow-hidden" role="application" aria-label="Terminal emulator">
+        <div class="terminal-header bg-[#161b22] px-4 py-2 flex items-center gap-2" role="toolbar">
+          <div class="flex gap-2" aria-hidden="true">
             <div class="w-3 h-3 rounded-full bg-red-500"></div>
             <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
             <div class="w-3 h-3 rounded-full bg-green-500"></div>
           </div>
-          <span class="text-gray-400 text-sm ml-4">glitchy@portfolio:~</span>
+          <span class="text-gray-400 text-sm ml-4" aria-label="Terminal prompt">glitchy@portfolio:~</span>
         </div>
         <div 
           ref="terminalRef" 
           class="terminal-body p-4 font-mono text-sm text-green-400 h-[500px] overflow-y-auto"
           @click="focusTerminal"
+          role="log"
+          aria-live="polite"
+          aria-label="Terminal output"
+          tabindex="0"
         >
           <div 
             v-for="(line, index) in outputLines" 
@@ -23,7 +27,7 @@
             v-html="formatLine(line)"
           ></div>
           <div class="flex items-center gap-2">
-            <span class="text-green-400">glitchy@portfolio:~$</span>
+            <span class="text-green-400" aria-hidden="true">glitchy@portfolio:~$</span>
             <input
               ref="inputRef"
               v-model="currentInput"
@@ -32,6 +36,10 @@
               @keydown.down="navigateHistory(1)"
               @keydown.tab.prevent="handleTabCompletion"
               class="flex-1 bg-transparent text-green-400 outline-none caret-green-400"
+              type="text"
+              aria-label="Terminal command input"
+              autocomplete="off"
+              spellcheck="false"
             />
           </div>
         </div>
@@ -40,7 +48,7 @@
         <p>Try commands like: <code class="bg-gray-800 px-2 py-1 rounded">help</code>, <code class="bg-gray-800 px-2 py-1 rounded">ls projects</code>, <code class="bg-gray-800 px-2 py-1 rounded">cat skills.txt</code>, <code class="bg-gray-800 px-2 py-1 rounded">bat skills.txt</code></p>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
