@@ -27,7 +27,7 @@ export default defineConfig({
           'animation-vendor': ['gsap', 'three'],
           'chart-vendor': ['d3', 'chart.js', 'vue-chartjs'],
           'ui-vendor': ['swiper', 'lucide-vue-next'],
-          'vanta-vendor': ['vanta'],
+          // Note: vanta is loaded dynamically, so it's not included here
         },
         // Optimize chunk file names
         chunkFileNames: 'assets/js/[name]-[hash].js',
