@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Programming",
+    "content": "Python (Advanced), Go (Intermediate), Rust (Intermediate), JavaScript (Intermediate)"
+  },
+  {
+    "title": "Homelab & Infrastructure",
+    "content": "Raspberry Pi clusters, Linux servers, self-hosting, Cloudflare tunnels, networking"
+  },
+  {
+    "title": "Electronics",
+    "content": "DIY cables, soldering, ESP microcontrollers, hardware tinkering"
+  },
+  {
+    "title": "Cloud & DevOps",
+    "content": "Cloudflare DNS, GCP, Azure, Docker, Kubernetes, Argo CD, telemetry"
+  },
+  {
+    "title": "Photography",
+    "content": "Street photography, capturing everyday moments, Xiaomi 15"
+  },
+  {
+    "title": "Gaming",
+    "content": "Apex Legends, Valorant, fast-paced FPS games"
+  },
+  {
+    "title": "Music",
+    "content": "HipHop/Rap, Indian classical, R&B, Apple Music, studio monitor speakers"
+  },
+  {
+    "title": "3D Modeling",
+    "content": "Fusion 360 for CAD work, Blender"
+  }
+]
+

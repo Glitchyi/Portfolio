@@ -25,10 +25,20 @@ export default {
 
   async fetch(request, env, ctx) {
     // CORS headers
-    const headers = {
+    const corsHeaders = {
       'Access-Control-Allow-Origin': '*',
-      'Content-Type': 'application/json',
+      'Access-Control-Allow-Methods': 'GET, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Max-Age': '86400',
     };
+
+    // Handle preflight OPTIONS request
+    if (request.method === 'OPTIONS') {
+      return new Response(null, {
+        status: 204,
+        headers: corsHeaders,
+      });
+    }
 
     try {
       // Get cached data
@@ -36,15 +46,26 @@ export default {
       if (!cached) {
         return new Response('No data available', { 
           status: 404,
-          headers 
+          headers: {
+            ...corsHeaders,
+            'Content-Type': 'application/json',
+          }
         });
       }
 
-      return new Response(cached, { headers });
+      return new Response(cached, { 
+        headers: {
+          ...corsHeaders,
+          'Content-Type': 'application/json',
+        }
+      });
     } catch (error) {
-      return new Response('Internal error', { 
+      return new Response(JSON.stringify({ error: 'Internal error' }), { 
         status: 500,
-        headers 
+        headers: {
+          ...corsHeaders,
+          'Content-Type': 'application/json',
+        }
       });
     }
   }

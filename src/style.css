@@ -1,90 +1,177 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-white: #ffffff;
+  --color-gray: #cecece;
+  --color-rust: #b7410e;
+  --color-docker: #0db7ed;
+  --color-black: #000000;
+  --color-transparent: transparent;
+  --color-hyperlink: #964CF3;
+  --color-cyan: #00FFFF;
+
+  --font-family-gsans: googleSans;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  --font-size-7xl: 4.5rem;
+  --font-size-8xl: 6rem;
+  --font-size-9xl: 8rem;
+  --font-size-xxl: 16rem;
+}
 
 @font-face {
   font-family: "googleSans";
-  src: url(/GoogleSans.ttf);
+  src: url(/GoogleSans.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 0px;
-}
-
-@media screen and (max-width: 768px) {
-  .pconly {
-    display: none;
+@layer base {
+  html,
+  body {
+    overflow-x: hidden;
+    min-height: 100vh;
+    background: #04001d;
+    margin: 0;
+    scroll-behavior: smooth;
+    cursor: url(/src/assets/cursor/cursor.png) 0 0, auto;
   }
-  .mobileonly {
-    display: block;
-  }
-}
 
-
-html,
-body {
-  overflow-x: hidden;
-  height: 100vh;
-  background: #04001d;
-  margin: 0;  
-  scroll-behavior: smooth;
-  cursor: url(src/assets/cursor/cursor.png), auto;
-}
-.hover {
-  cursor: url(src/assets/cursor/cursor-hover.png), auto;
-}
-#snapping {
-  display: flex;
-  flex-basis: column-nowrap;
-  scroll-snap-type: y proximity;
-  overflow: hidden;
-}
-#snapping > div {
-  scroll-snap-align: start;
-}
-
-#wrapper {
-  min-height: 100%;
-}
-#name {
-  color: #ffffff;
-  transition: text-shadow 0.5s;
-  text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15);
-}
-#name:hover {
-  text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.45);
-  cursor: url(src/assets/cursor/cursor-hover.png), auto;
-}
-#tagline {
-  color: #4dfdef;
-  transition: text-shadow 0.5s;
-  text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
-}
-#tagline:hover {
-  cursor: url(src/assets/cursor/cursor-hover.png), auto;
-  text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.45);
-}
-#profile {
-  width: 50vh;
-  margin: none;
-  border-radius: 100%;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15);
-  transition: box-shadow 0.3s;
-}
-@media screen and (max-width: 768px) {
-  #profile {
-    width: 25vh;
+  ::-webkit-scrollbar {
+    width: 0px;
   }
 }
 
-#profile:hover {
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.45);
-  cursor: url(src/assets/cursor/cursor-hover.png), auto;
+@layer components {
+  .hover {
+    cursor: url(/src/assets/cursor/cursor-hover.png) 0 0, auto;
+  }
+
+  .snapping {
+    display: flex;
+    flex-direction: column;
+    scroll-snap-type: y proximity;
+    overflow: hidden;
+  }
+
+  .snapping > div {
+    scroll-snap-align: start;
+  }
+
+  .wrapper {
+    min-height: 100%;
+  }
+
+  .name-text {
+    color: #ffffff;
+    transition: text-shadow 0.5s;
+    text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .name-text:hover {
+    text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.45);
+    cursor: url(/src/assets/cursor/cursor-hover.png) 0 0, auto;
+  }
+
+  .tagline-text {
+    color: #4dfdef;
+    transition: text-shadow 0.5s;
+    text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .tagline-text:hover {
+    cursor: url(/src/assets/cursor/cursor-hover.png) 0 0, auto;
+    text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.45);
+  }
+
+  .profile-image {
+    width: 60vh;
+    margin: 0;
+    border-radius: 100%;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s;
+  }
+
+  .profile-image:hover {
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.45);
+    cursor: url(/src/assets/cursor/cursor-hover.png) 0 0, auto;
+  }
+
+  a:hover {
+    cursor: url(/src/assets/cursor/cursor-hover.png) 0 0, auto;
+  }
+
+  /* Custom cursor for all interactive elements */
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  .cursor-pointer,
+  [role="button"],
+  [role="link"],
+  [tabindex]:not([tabindex="-1"]),
+  .easter-egg-icon,
+  .interest-item,
+  .copy-text {
+    cursor: url(/src/assets/cursor/cursor-hover.png) 0 0, auto;
+  }
+
+  a:hover,
+  button:hover,
+  input:hover,
+  select:hover,
+  textarea:hover,
+  .cursor-pointer:hover,
+  [role="button"]:hover,
+  [role="link"]:hover,
+  [tabindex]:not([tabindex="-1"]):hover,
+  .easter-egg-icon:hover,
+  .interest-item:hover,
+  .copy-text:hover {
+    cursor: url(/src/assets/cursor/cursor-hover.png) 0 0, auto;
+  }
+
+  /* IntroText component cursor */
+  .intro-text-container,
+  .intro-text-container p,
+  .intro-text-container span {
+    cursor: url(/src/assets/cursor/cursor-hover.png) 0 0, auto;
+  }
+
+  .intro-text-container:hover,
+  .intro-text-container p:hover,
+  .intro-text-container span:hover {
+    cursor: url(/src/assets/cursor/cursor-hover.png) 0 0, auto;
+  }
 }
-a:hover {
-  cursor: url(src/assets/cursor/cursor-hover.png), auto;
-}
-#cptext:hover {
-  cursor: url(src/assets/cursor/cursor-hover.png), auto;
+
+@layer utilities {
+  .font-gsans {
+    font-family: var(--font-family-gsans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  @media screen and (max-width: 768px) {
+    .pconly {
+      display: none;
+    }
+    
+    .mobileonly {
+      display: block;
+    }
+
+    .profile-image {
+      width: 30vh;
+    }
+  }
 }

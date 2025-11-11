@@ -1,0 +1,72 @@
+[
+  {
+    "name": "pipi",
+    "description": "Config and setup scripts for a small homelab Raspberry Pi server",
+    "technologies": ["Shell scripts", "Raspberry Pi OS"],
+    "github": "https://github.com/Glitchyi/pipi",
+    "live": "",
+    "features": [
+      "Homelab server configuration",
+      "Raspberry Pi setup automation"
+    ]
+  },
+  {
+    "name": "monke-proxy",
+    "description": "Rate limit guard for the MonkeyType API used on glitchy.systems",
+    "technologies": ["Go"],
+    "github": "https://github.com/Glitchyi/monke-proxy",
+    "live": "",
+    "features": [
+      "API rate limiting",
+      "Proxy for MonkeyType API"
+    ]
+  },
+  {
+    "name": "weather-server",
+    "description": "A simple weather server in development for hyperlocalized climate predictions making use of edge compute on esp microcontrollers",
+    "technologies": ["HTML", "JavaScript"],
+    "github": "https://github.com/Glitchyi/weather-server",
+    "live": "",
+    "features": [
+      "Hyperlocalized weather predictions",
+      "Climate data processing",
+      "ESP microcontroller integration"
+    ]
+  },
+  {
+    "name": "spotpapers",
+    "description": "Python tool to retrieve wallpapers from Windows Spotlight cache and save them to a specified folder",
+    "technologies": ["Python"],
+    "github": "https://github.com/Glitchyi/spotpapers",
+    "live": "",
+    "features": [
+      "Fetches wallpapers from Windows Spotlight location",
+      "Saves wallpapers to user-defined folder",
+      "Optional AI renaming with Groq API",
+      "Installable via pip"
+    ]
+  },
+  {
+    "name": "Data-Lens",
+    "description": "Data visualization project",
+    "technologies": ["HTML", "JavaScript"],
+    "github": "https://github.com/Glitchyi/Data-Lens",
+    "live": "",
+    "features": [
+      "Data visualization",
+      "Frontend and server components"
+    ]
+  },
+  {
+    "name": "meow-meow",
+    "description": "Popular project helping people learn about GitHub",
+    "technologies": ["HTML"],
+    "github": "https://github.com/Glitchyi/meow-meow",
+    "live": "",
+    "features": [
+      "Community favorite project",
+      "Help people learn about GitHub"
+    ]
+  }
+]
+
