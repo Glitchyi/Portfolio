@@ -24,9 +24,35 @@ export function useVanta(elementRef, options = {}) {
     if (!elementRef.value) return
 
     try {
-      const VANTA = (await import('vanta/dist/vanta.fog.min.js')).default
+      // Import the fog effect module
+      const fogModule = await import('vanta/dist/vanta.fog.min.js')
       
-      vantaEffect.value = VANTA({
+      // The module might export the effect function directly or as default
+      // It might also attach to window.VANTA
+      let fogEffect = null
+      
+      if (window.VANTA && typeof window.VANTA.FOG === 'function') {
+        // If VANTA is available on window (UMD module)
+        fogEffect = window.VANTA.FOG
+      } else if (fogModule.default && typeof fogModule.default === 'function') {
+        // If default export is the function directly
+        fogEffect = fogModule.default
+      } else if (fogModule.default && typeof fogModule.default.FOG === 'function') {
+        // If default export has FOG method
+        fogEffect = fogModule.default.FOG
+      } else if (typeof fogModule === 'function') {
+        // If module itself is the function
+        fogEffect = fogModule
+      } else {
+        console.error('Vanta module structure:', fogModule)
+        throw new Error('Could not find Vanta FOG effect function')
+      }
+      
+      if (typeof fogEffect !== 'function') {
+        throw new Error('Fog effect is not a function')
+      }
+      
+      vantaEffect.value = fogEffect({
         ...defaultOptions,
         el: elementRef.value,
         THREE: THREE

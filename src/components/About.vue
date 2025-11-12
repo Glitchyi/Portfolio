@@ -31,9 +31,9 @@
                 <div class="flex items-center">
                     <div class="border hidden md:block p-1 border-sky-500 backdrop-blur-sm text-white text-center rounded-lg text-xs sm:text-sm"
                         @click="copyToClipboard">
-                        <p id="cptext" class="p-2 copy-text">
+                        <div id="cptext" class="p-2 copy-text">
                         <div class="cptext" :key="text">{{ text }}</div>
-                        </p>
+                        </div>
                     </div>
                 </div>
             </div>

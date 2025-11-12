@@ -3,7 +3,12 @@
         <div class="max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
                 <div class="flex items-center gap-3 md:gap-4">
-                    <span class="text-2xl lg:text-3xl font-gsans text-white">Also, I kinda type sometimes</span>
+                    <span 
+                        class="text-2xl lg:text-3xl font-gsans text-white cursor-pointer hover:underline transition-all"
+                        @click="openMonkeytypeProfile"
+                    >
+                        Also, I kinda type sometimes
+                    </span>
                     <span class="arrow-pointer text-3xl lg:text-5xl text-white" aria-hidden="true">→</span>
                 </div>
                 
@@ -71,6 +76,10 @@ onUnmounted(() => {
         abortController.abort()
     }
 })
+
+const openMonkeytypeProfile = () => {
+    window.open('https://monkeytype.com/profile/Glitchyie', '_blank')
+}
 </script>
 
 <style scoped>

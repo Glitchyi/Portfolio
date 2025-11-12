@@ -3,7 +3,7 @@
         Honestly, I'm not a web dev ¯\_(ツ)_/¯ 
         but, I do indulge in:
         <p class="text-gray opacity-50 hidden md:block">Try hovering</p>
-        <p class="text-gray text-sm opacity-50 md:hidden block">Try clicking</p>
+        
         <div class="flex justify-start">
             <div class="text-2xl select-none md:text-3xl lg:text-5xl xl:text-7xl flex flex-col gap-4 w-full overflow-x-hidden">
                 <div 
@@ -14,8 +14,8 @@
                     <div class="interest-cover absolute inset-0 flex items-center pl-2 md:pl-5 whitespace-nowrap z-10">
                         {{ interest.title }}
                     </div>
-                    <div class="interest-content pl-2 md:pl-5 bg-white text-black flex items-center overflow-x-auto whitespace-normal break-words">
-                        <span class="text-sm md:text-base lg:text-lg xl:text-xl">{{ interest.content }}</span>
+                    <div class="interest-content pl-2 md:pl-5 bg-white text-black flex items-center overflow-x-hidden whitespace-normal break-words">
+                        <span class="text-2xl md:text-3xl lg:text-5xl xl:text-7xl">{{ interest.content }}</span>
                     </div>
                 </div>
             </div>
@@ -67,10 +67,8 @@ onMounted(() => {
     display: flex;
     align-items: flex-start;
     max-width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    overflow-x: hidden;
+    overflow-y: visible;
     word-wrap: break-word;
     word-break: break-word;
     flex-wrap: wrap;

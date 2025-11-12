@@ -41,7 +41,7 @@ import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
 
 const props = defineProps({
-    iconComponent: Object,
+    iconComponent: [Object, Function],
     tooltip: String,
     iconType: String
 })
