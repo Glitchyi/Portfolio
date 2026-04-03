@@ -11,7 +11,7 @@
             NARAYANAN
           </p>
           <p class="font-bold text-xl lg:text-4xl" id="tagline">
-            Student at MITS |<br />
+            Working at IBM |<br />
             Computer Enthusiast |<br />頭いい
           </p>
         </div>
