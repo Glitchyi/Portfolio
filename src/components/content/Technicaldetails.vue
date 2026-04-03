@@ -8,11 +8,11 @@
             <div class="text-2xl select-none md:text-3xl lg:text-5xl xl:text-7xl flex flex-col gap-4">
                 <div class=" w-screen h-50 ">
                     <div class="pl-2 md:pl-5 textswish absolute whitespace-nowrap w-screen hover:opacity-0">Programming</div>
-                    <div class="pl-2 md:pl-5 bg-white whitespace-nowrap text-black">Rust, Python, sadly JS</div>
+                    <div class="pl-2 md:pl-5 bg-white whitespace-nowrap text-black">Go, Rust, Python, TS, C/C++</div>
                 </div>
                 <div class="w-screen h-50">
                     <div class="pl-2 md:pl-5 textswish whitespace-nowrap absolute w-screen hover:opacity-0">Wallet Burning Tools</div>
-                    <div class="pl-2 md:pl-5 bg-white whitespace-nowrap text-black">GCP, Azure, Docker</div>
+                    <div class="pl-2 md:pl-5 bg-white whitespace-nowrap text-black">K8s, Helm, GCP, Azure, Docker</div>
                 </div>
                 <div class="w-screen h-50">
                     <div class="pl-2 md:pl-5 textswish whitespace-nowrap absolute w-screen hover:opacity-0">3D Modelling</div>
